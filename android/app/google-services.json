@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "368332021752",
+    "firebase_url": "https://hageregebeya.firebaseio.com",
+    "project_id": "hageregebeya",
+    "storage_bucket": "hageregebeya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368332021752:android:7b623cdea4e2e5f7",
+        "android_client_info": {
+          "package_name": "com.sanen.shopapptut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368332021752-7eoqvjncojf0qevquma296ig9niinb4h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sanen.shopapptut",
+            "certificate_hash": "f2582b51e66296e18bb4ca40a0ea5f8d1e060306"
+          }
+        },
+        {
+          "client_id": "368332021752-jd5rumeuuucb9g3fhup9bmhgugu99nle.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK9rRkdzdfTGE8hqGVNurpY9O7aL7Xa4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368332021752-jd5rumeuuucb9g3fhup9bmhgugu99nle.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "368332021752-ss2hhlp0d5o3ukntkf2vnibvr7821gi4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imperialinfosys.fgroceries"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
