@@ -1,36 +1,31 @@
+import 'package:HagereGebeya/Locator.dart';
+import 'package:HagereGebeya/pages/HomeView.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:provider/provider.dart';
-import 'package:shopapp_tut/commons/common.dart';
+import 'package:HagereGebeya/commons/common.dart';
 
 //my own imports
-import 'package:shopapp_tut/componets/horizontal_listview.dart';
-import 'package:shopapp_tut/componets/products.dart';
-import 'package:shopapp_tut/pages/addProduct.dart';
-import 'package:shopapp_tut/pages/cart.dart';
-import 'package:shopapp_tut/pages/product_details.dart';
-import 'package:shopapp_tut/provider/user_provider.dart';
+import 'package:HagereGebeya/componets/horizontal_listview.dart';
+import 'package:HagereGebeya/componets/products.dart';
+import 'package:HagereGebeya/pages/addProduct.dart';
+import 'package:HagereGebeya/pages/cart.dart';
+import 'package:provider/provider.dart';
+import 'package:HagereGebeya/provider/CRUDModel.dart';
   
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 
-
 }
 
 class _HomePageState extends State<HomePage> {
   TextEditingController _search = TextEditingController();
+  
  int currentIndex = 0;
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  
    void getName () async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     
@@ -39,6 +34,7 @@ class _HomePageState extends State<HomePage> {
  
   @override
   Widget build(BuildContext context) {
+     
     
   Widget image_carousel = new Container(
     height: 200.0,
@@ -60,14 +56,15 @@ class _HomePageState extends State<HomePage> {
       dotBgColor: Colors.transparent,
     ),
   );
-    // final user = Provider.of<UserProvider>(context);
     
+  
     return Scaffold(
       appBar: new AppBar(
         iconTheme: IconThemeData(color: deepOrange),
         elevation: 0.1,
         backgroundColor: white,
         title: Material(
+          
           borderRadius: BorderRadius.circular(10.0),
           color: Colors.grey[50],
           elevation: 0.0,
@@ -106,100 +103,7 @@ class _HomePageState extends State<HomePage> {
               })
         ],
       ),
-//       drawer: new Drawer(
-//         child: new ListView(
-//           children: <Widget>[
-// //            header
-//             new UserAccountsDrawerHeader(
-                
-//                 accountName: Text(''),
-//                 accountEmail: Text(''),
-//             currentAccountPicture: GestureDetector(
-//               child: new CircleAvatar(
-//                 backgroundColor: Colors.grey,
-//                 child: Icon(Icons.person, color: Colors.white,),
-//               ),
-//             ),
-//             decoration: new BoxDecoration(
-//               color: deepOrange
-//             ),
-//             ),
-
-// //            body
-
-//           // InkWell(
-//           //   onTap: (){},
-//           //   child: ListTile(
-//           //     title: Text('Home Page'),
-//           //     leading: Icon(Icons.home, color: Colors.grey,),
-//           //   ),
-//           // ),
-//             InkWell(
-//               onTap: (){},
-//               child: ListTile(
-//                 title: Text('My account'),
-//                 leading: Icon(Icons.person, color: Colors.grey,),
-//               ),
-//             ),
-
-//             InkWell(
-//               onTap: (){},
-//               child: ListTile(
-//                 title: Text('My Orders'),
-//                 leading: Icon(Icons.shopping_basket, color: Colors.grey,),
-//               ),
-//             ),
-
-//             InkWell(
-//               onTap: (){
-//                 Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
-//               },
-//               child: ListTile(
-//                 title: Text('Shopping Cart'),
-//                 leading: Icon(Icons.shopping_cart, color: Colors.grey,),
-//               ),
-//             ),
-//           InkWell(
-//               onTap: (){
-//                 // Navigator.push(context, MaterialPageRoute(builder: (context)=> new AddProduct()));
-                
-//               },
-//               child: ListTile(
-//                 title: Text('Add Product'),
-//                 leading: Icon(Icons.add_a_photo, color: Colors.grey,),
-//               ),
-//             ),
-//             InkWell(
-//               onTap: (){},
-//               child: ListTile(
-//                 title: Text('Favourites'),
-//                 leading: Icon(Icons.favorite, color: Colors.grey,),
-//               ),
-//             ),
-
-//             Divider(),
-
-//             InkWell(
-//               onTap: (){},
-//               child: ListTile(
-//                 title: Text('Settings'),
-//                 leading: Icon(Icons.settings, color: Colors.grey,),
-//               ),
-//             ),
-
-//             InkWell(
-//               onTap: (){
-//                 user.signOut();
-//               },
-//               child: ListTile(
-//                 title: Text('Log Out'),
-//                 leading: Icon(Icons.transit_enterexit, color: Colors.grey),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-
+      
       body: new ListView(
         children: <Widget>[
           //image carousel begins here
@@ -223,6 +127,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      
       bottomNavigationBar: BottomNavyBar(
           selectedIndex: currentIndex,
           showElevation: true,
@@ -231,7 +136,7 @@ class _HomePageState extends State<HomePage> {
             if(index == 0){
               Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
             }else if(index == 1){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView()));
             }else if(index == 2){
               Navigator.push(context, MaterialPageRoute(builder: (context) => AddProduct()));
             }else if(index == 3){

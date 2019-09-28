@@ -66,10 +66,9 @@ class _AddProductState extends State<AddProduct> {
     url = imageUrl.toString();
 
     print("Image Url" + url);
-    SnackBar(
-      content: Text("Successfully Posted")
-    );
     saveToDatabase(url);
+    
+    
   }
   bool validateAndSave(){
     final form = formKey.currentState;
@@ -81,6 +80,7 @@ class _AddProductState extends State<AddProduct> {
     // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
       return true;
     }
+    return false;
   }
   void saveToDatabase(url) {
       var dbTimeKey = new DateTime.now();
@@ -105,6 +105,9 @@ class _AddProductState extends State<AddProduct> {
       };
 
       ref.child("Posts").push().set(data);
+      SnackBar(
+      content: Text("Successfully Posted")
+    );
   }
 // TODO: correct floating button , change the ui for addproduct, fix imagepicker
   Widget  enableUpload(){

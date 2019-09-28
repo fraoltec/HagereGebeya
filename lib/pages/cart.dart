@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //my imports
-import 'package:shopapp_tut/componets/cart_products.dart';
+import 'package:HagereGebeya/componets/cart_products.dart';
 
 
 

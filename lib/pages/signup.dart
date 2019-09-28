@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
-import 'package:shopapp_tut/commons/common.dart';
-import 'package:shopapp_tut/commons/loading.dart';
-import 'package:shopapp_tut/pages/home.dart';
-import 'package:shopapp_tut/provider/user_provider.dart';
+import 'package:HagereGebeya/commons/common.dart';
+import 'package:HagereGebeya/commons/loading.dart';
+import 'package:HagereGebeya/pages/home.dart';
+import 'package:HagereGebeya/provider/user_provider.dart';
 
 class Signup extends StatefulWidget {
   @override

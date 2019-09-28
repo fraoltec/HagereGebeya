@@ -1,8 +1,11 @@
+import 'package:HagereGebeya/model/productModel.dart';
+import 'package:HagereGebeya/pages/posts.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:shopapp_tut/commons/common.dart';
-import 'package:shopapp_tut/pages/posts.dart';
-import 'package:shopapp_tut/pages/product_details.dart';
+import 'package:provider/provider.dart';
+import 'package:HagereGebeya/commons/common.dart';
+import 'package:HagereGebeya/pages/product_details.dart';
+import 'package:HagereGebeya/provider/CRUDModel.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -12,6 +15,7 @@ class Products extends StatefulWidget {
 class _ProductsState extends State<Products> {
 
     List<Posts> postsList = [];
+    
 
   @override
   void initState() {
@@ -22,21 +26,10 @@ class _ProductsState extends State<Products> {
 
     postsRef.once().then((DataSnapshot snap){
         // var KEYS = snap.value.key;
-        var DATA = snap.value;
-        // var result = snap.value.values as Iterable;
-        postsList.clear();
         
-        // for(var individualKey in KEYS){
-        //   Posts posts = new Posts(
-        //       DATA[individualKey]['image'],
-        //       DATA[individualKey]['title'],
-        //       DATA[individualKey]['price'],
-        //       DATA[individualKey]['description'],
-        //       DATA[individualKey]['date'],
-        //       DATA[individualKey]['time'],
-        //   );
-        //   postsList.add(posts);
-        // }
+        // var result = snap.value.values as Iterable;
+        postsList.clear();       
+    
         Map<dynamic, dynamic> values = snap.value;
         print(values.toString());
           values.forEach((key,values) {

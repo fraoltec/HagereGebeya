@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shopapp_tut/provider/cart_bloc.dart';
 
 class Cart_products extends StatefulWidget {
   @override

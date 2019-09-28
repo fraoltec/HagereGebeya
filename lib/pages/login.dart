@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopapp_tut/commons/common.dart';
-import 'package:shopapp_tut/commons/loading.dart';
-import 'package:shopapp_tut/pages/signup.dart';
+import 'package:HagereGebeya/commons/common.dart';
+import 'package:HagereGebeya/commons/loading.dart';
+import 'package:HagereGebeya/pages/signup.dart';
 import 'package:provider/provider.dart';
-import 'package:shopapp_tut/provider/user_provider.dart';
+import 'package:HagereGebeya/provider/user_provider.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   final _key = GlobalKey<ScaffoldState>();
   TextEditingController _email = TextEditingController();
   TextEditingController _password = TextEditingController();
-  // UserProvider userProvider = new UserProvider.initialize();
+  
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context);

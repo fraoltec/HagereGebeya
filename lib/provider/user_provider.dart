@@ -1,8 +1,12 @@
+import 'package:HagereGebeya/Locator.dart';
+import 'package:HagereGebeya/model/productModel.dart';
+import 'package:HagereGebeya/service/Api.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shopapp_tut/db/users.dart';
+import 'package:HagereGebeya/db/users.dart';
 
 enum Status{Uninitialized, Authenticated, Authenticating, Unauthenticated}
 
@@ -30,7 +34,26 @@ class UserProvider with ChangeNotifier{
     _auth.onAuthStateChanged.listen(_onStateChanged);
   }
    
+  Api _api = locator<Api>();
 
+  List<Product> products;
+
+  Future<List<Product>> fetchProducts() async {
+    var result = await _api.getDataCollection();
+    products = result.documents
+        .map((doc) => Product.fromMap(doc.data, doc.documentID))
+        .toList();
+    return products;
+  }
+
+  Stream<QuerySnapshot> fetchProductsAsStream() {
+    return _api.streamDataCollection();
+  }
+
+  Future<Product> getProductById(String id) async {
+    var doc = await _api.getDocumentById(id);
+    return  Product.fromMap(doc.data, doc.documentID) ;
+  }
 
   Future<bool> signInWithGoogle() async {
     

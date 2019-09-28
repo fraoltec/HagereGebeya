@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shopapp_tut/commons/common.dart';
-import 'package:shopapp_tut/componets/products.dart';
-import 'package:shopapp_tut/provider/cart_bloc.dart';
+import 'package:HagereGebeya/commons/common.dart';
+import 'package:HagereGebeya/componets/products.dart';
+import 'package:HagereGebeya/model/productModel.dart';
+// import 'package:HagereGebeya/ViewModels/CRUDModel.dart';
 import 'home.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -26,8 +26,15 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+
+  final Product product = new Product();
+
+  
+
   @override
   Widget build(BuildContext context) {
+    //  final productProvider = Provider.of<CRUDModel>(context);
+     
     // var bloc = Provider.of<CartBloc>(context);
     // int totalCount = 0;
     // if (bloc.cart.length > 0) {
@@ -93,110 +100,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
             ),
-            // =========================== the first buttons =============
-            // Row(
-            //   children: <Widget>[
-            //     // ================ the Size button ===========
-            //     Expanded(
-            //       child: MaterialButton(
-            //         onPressed: () {
-            //           showDialog(
-            //               context: context,
-            //               builder: (context) {
-            //                 return new AlertDialog(
-            //                   title: new Text("Size"),
-            //                   content: new Text("Choose the Size"),
-            //                   actions: <Widget>[
-            //                     new MaterialButton(
-            //                       onPressed: () {
-            //                         //Perform Close
-            //                         Navigator.of(context).pop(context);
-            //                       },
-            //                       child: new Text("close"),
-            //                     )
-            //                   ],
-            //                 );
-            //               });
-            //         },
-            //         color: Colors.white,
-            //         textColor: Colors.grey,
-            //         elevation: 0.2,
-            //         child: Row(
-            //           children: <Widget>[
-            //             Expanded(child: new Text("Size")),
-            //             Expanded(child: new Icon(Icons.arrow_drop_down)),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //     // ================ the Size button ===========
-            //     Expanded(
-            //       child: MaterialButton(
-            //         onPressed: () {
-            //           showDialog(
-            //               context: context,
-            //               builder: (context) {
-            //                 return new AlertDialog(
-            //                   title: new Text("Color"),
-            //                   content: new Text("Choose the Color"),
-            //                   actions: <Widget>[
-            //                     new MaterialButton(
-            //                       onPressed: () {
-            //                         //Perform Close
-            //                         Navigator.of(context).pop(context);
-            //                       },
-            //                       child: new Text("close"),
-            //                     )
-            //                   ],
-            //                 );
-            //               });
-            //         },
-            //         color: Colors.white,
-            //         textColor: Colors.grey,
-            //         elevation: 0.2,
-            //         child: Row(
-            //           children: <Widget>[
-            //             Expanded(child: new Text("Color")),
-            //             Expanded(child: new Icon(Icons.arrow_drop_down)),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //     // ================ the Size button ===========
-            //     Expanded(
-            //       child: MaterialButton(
-            //         onPressed: () {
-            //           showDialog(
-            //               context: context,
-            //               builder: (context) {
-            //                 return new AlertDialog(
-            //                   title: new Text("Quantity"),
-            //                   content: new Text("How Much do you want?"),
-            //                   actions: <Widget>[
-            //                     new MaterialButton(
-            //                       onPressed: () {
-            //                         //Perform Close
-            //                         Navigator.of(context).pop(context);
-            //                       },
-            //                       child: new Text("close"),
-            //                     )
-            //                   ],
-            //                 );
-            //               });
-            //         },
-            //         color: Colors.white,
-            //         textColor: Colors.grey,
-            //         elevation: 0.2,
-            //         child: Row(
-            //           children: <Widget>[
-            //             Expanded(child: new Text("Qty")),
-            //             Expanded(child: new Icon(Icons.arrow_drop_down)),
-            //           ],
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
+           
             // =========================== The second Button(Buy button) =============
             Row(
               children: <Widget>[
@@ -250,37 +154,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 )
               ],
             ),
-            // new Row(
-            //   children: <Widget>[
-            //     Padding(
-            //       padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-            //       child: new Text(
-            //         "Product Name",
-            //         style: TextStyle(color: Colors.grey),
-            //       ),
-            //     ),
-            //     Padding(
-            //       padding: EdgeInsets.all(5.0),
-            //       child: new Text(widget.product_detail_name),
-            //     )
-            //   ],
-            // ),
-            // new Row(
-            //   children: <Widget>[
-            //     Padding(
-            //       padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
-            //       child: new Text(
-            //         "Brand",
-            //         style: TextStyle(color: Colors.grey),
-            //       ),
-            //     ),
-            //     // Create The product Brand
-            //     Padding(
-            //       padding: EdgeInsets.all(5.0),
-            //       child: new Text("Brand X"),
-            //     )
-            //   ],
-            // ),
+           
             // Similar Products Section
             Divider(),
             Padding(

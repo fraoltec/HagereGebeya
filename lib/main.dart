@@ -1,14 +1,14 @@
+import 'package:HagereGebeya/Locator.dart';
 import 'package:flutter/material.dart';
-import 'package:shopapp_tut/commons/common.dart';
-import 'package:shopapp_tut/pages/home.dart';
-import 'package:shopapp_tut/pages/splash.dart';
-import 'package:shopapp_tut/provider/user_provider.dart';
+import 'package:HagereGebeya/commons/common.dart';
+import 'package:HagereGebeya/pages/home.dart';
+import 'package:HagereGebeya/pages/splash.dart';
+import 'package:HagereGebeya/provider/user_provider.dart';
 import './pages/login.dart';
 import 'package:provider/provider.dart';
-import 'package:shopapp_tut/provider/user_provider.dart';
 
 void main() {
-
+  setupLocator();
   runApp(ChangeNotifierProvider(builder: (_)=>UserProvider.initialize(),
   child: MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -24,6 +24,7 @@ void main() {
 class ScreenController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     final user = Provider.of<UserProvider>(context);
     
      switch(user.status){
