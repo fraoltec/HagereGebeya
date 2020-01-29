@@ -1,8 +1,3 @@
-# shopapp_tut
+# HagereGebeya_DEMO
 
-A new Flutter application.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+A mobile application for Ethiopian Multivendor Ecommerce, HagereGebeya, that is currently doing business on telegram @hageregebeya.
